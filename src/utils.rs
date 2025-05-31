@@ -1,8 +1,8 @@
 use std::path::PathBuf;
-use std::io;
+use std::io::Error;
 use walkdir::WalkDir;
 
-pub fn calculate_dir_size(path: &PathBuf) -> Result<u64, std::io::Error> {
+pub fn calculate_dir_size(path: &PathBuf) -> Result<u64, Error> {
     let mut total_size = 0;
     for entry in WalkDir::new(path).into_iter().filter_map(|e| e.ok()) {
         if entry.file_type().is_file() {

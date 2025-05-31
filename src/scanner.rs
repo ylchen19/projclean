@@ -7,7 +7,7 @@ use crate::rules::ProjectCleanRule;
 use crate::utils::{calculate_dir_size, format_size};
 
 pub fn handle_identified_project(
-    project_root: &std::path::Path,
+    project_root: &Path,
     identifier_file_name: &str,
     rule: &ProjectCleanRule,
     is_dry_run: bool,
